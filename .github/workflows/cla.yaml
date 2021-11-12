@@ -19,3 +19,5 @@ jobs:
           persist-credentials: false
           path: ./.github/actions/cla-bot
       - uses: ./.github/actions/cla-bot
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
