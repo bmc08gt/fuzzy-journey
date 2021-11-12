@@ -9,6 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     name: Verify CLA
     steps:
-      - name: Checkout
+      - uses: actions/checkout@v2
+      - name: Checkout CLA Bot Repo
         uses: actions/checkout@v2
-      - uses: remix-run/cla-bot@v0.1.0
+        with:
+          repository: remix-run/cla-bot
+          ref: refs/tags/0.1.0
+          token: ${{ secrets.REMIX_CLA_BOT_PAT }}
+          persist-credentials: false
+          path: ./.github/actions/cla-bot
+      - uses: ./.github/actions/cla-bot
