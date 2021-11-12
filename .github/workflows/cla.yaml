@@ -7,7 +7,6 @@ on:
 jobs:
   cla:
     runs-on: ubuntu-latest
-    name: Verify CLA
     steps:
       - uses: actions/checkout@v2
       - name: Checkout CLA Bot Repo
@@ -18,6 +17,7 @@ jobs:
           token: ${{ secrets.REMIX_CLA_BOT_PAT }}
           persist-credentials: false
           path: ./.github/actions/cla-bot
-      - uses: ./.github/actions/cla-bot
+      - name: Verify CLA
+        uses: ./.github/actions/cla-bot
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
