@@ -15,7 +15,7 @@ jobs:
         with:
           repository: remix-run/cla-bot
           ref: refs/tags/0.1.0
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.REMIX_CLA_BOT_PAT }}
           persist-credentials: false
           path: ./.github/actions/cla-bot
       - uses: ./.github/actions/cla-bot
