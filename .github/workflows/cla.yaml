@@ -9,4 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Verify CLA
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
       - uses: remix-run/cla-bot@v0.1.0
