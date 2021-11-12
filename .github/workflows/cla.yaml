@@ -1,0 +1,12 @@
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  cla:
+    runs-on: ubuntu-latest
+    name: Verify CLA
+    steps:
+      - uses: remix-run/cla-bot@v0.1.0
